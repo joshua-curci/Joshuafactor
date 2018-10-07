@@ -10,13 +10,7 @@ use App\Pets;
 
 class PetsController extends Controller
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
-     * @return Response
-     */
-    public function deletepets($id)
+    public function deletepets($userId, $petId)
     {
         Pets::where('id', $petId)->delete();
         return null;

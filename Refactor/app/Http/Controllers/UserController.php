@@ -11,12 +11,6 @@ use App\Pets;
 
 class UserController extends Controller
 {
-    /**
-     * Show the profile for the given user.
-     *
-     * @param  int  $id
-     * @return Response
-     */
     public function index()
     {
         $users = Users::get();
