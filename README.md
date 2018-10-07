@@ -10,7 +10,6 @@ ToDo list should be as follows:<br/>
 - [x] Split routes from functions in their own controllers
 - [x] Put DB calls into models
 - [ ] Optimise controller functions (5 in total)
-- [ ] Test incomplete foreach returns and function errors
 <br/>
 <br/>
 ### Split routes from functions in their own controllers
@@ -24,3 +23,4 @@ Being done in parts<br/>
 2. In the 'selecteduser' function, you are getting a unique user, you can optimise this code by simply getting the first returned result of the unique ID<br/>
 3. Similar thing can be optimised for the 'userpets' function<br/>
 4. Updated the pet food query into the one query in 'userpets' data return will still be the same but cleaner and shorter function<br/>
+5. You can preset date formats so the lines running a manual date format in the 'userspost' function is not needed<br/>

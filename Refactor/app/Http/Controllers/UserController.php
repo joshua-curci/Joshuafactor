@@ -75,16 +75,8 @@ class UserController extends Controller
         $insertUser->disabled = false;
         $insertUser->save();
      
-        $users = Users::where('email', $email)->get();
+        $user = Users::where('email', $email)->first();
      
-        if (count($users) > 0) {
-            $user = $users[0];
-            $user->login_date_formatted = $user->login_date->format('Y-m-d H:i:s'); 
-            $user->create_date_formatted = $user->created_at->format('Y-m-d H:i:s'); 
-            $user->update_date_formatted = $user->updated_at->format('Y-m-d H:i:s'); 
-            return $user;
-        }
-     
-        return null;    
+        return $user;    
     }
 }
