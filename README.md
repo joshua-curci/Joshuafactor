@@ -25,3 +25,21 @@ Being done in parts<br/>
 4. Updated the pet food query into the one query in 'userpets' data return will still be the same but cleaner and shorter function<br/>
 5. You can preset date formats so the lines running a manual date format in the 'userspost' function is not needed<br/>
 6. Cleanup of comments and the 'deletepets' function<br/>
+<br/>
+<br/>
+## Final Comments
+Even though some datapoints for the views may have changed, the function of this is the same.<br/>
+It includes the splitting of the original file into the route, controller and model components.<br/>
+Optimising calls to have the models run the data testing and only requesting the one row required from the table is better data wise<br/>
+On of the main things being replaced in these files is the 'count' sections of code use to set a variable as the first instance.<br/>
+eg.
+```
+if (count($users) > 0) {
+        $user = $users[0];
+    }
+```
+AND
+```
+if (count($pets) > 0) {
+```
+Aditionally the main insert statement for he post needed to also be updated
