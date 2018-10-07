@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use DB;
+use App\Pets;
 
 class PetsController extends Controller
 {
@@ -17,7 +18,7 @@ class PetsController extends Controller
      */
     public function deletepets($id)
     {
-        DB::table('pets')->where('id', $petId)->delete();
+        Pets::where('id', $petId)->delete();
         return null;
     }
 }

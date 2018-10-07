@@ -8,7 +8,8 @@ Next would be to look at every function separately as to see what each function 
 I can also see that there is foreach that is not going to return the right data so that will need to be fixed and there is also form validation that can be cleaned up and optimised maybe even with custom messages.<br/>
 ToDo list should be as follows:<br/>
 - [x] Split routes from functions in their own controllers
-- [ ] Optimise controller functions by putting DB calls into models
+- [x] Put DB calls into models
+- [ ] Optimise controller functions (5 in total)
 - [ ] Optimise form validations
 - [ ] Test incomplete foreach returns and function errors
 <br/>
@@ -16,3 +17,5 @@ ToDo list should be as follows:<br/>
 ### Split routes from functions in their own controllers
 At a base level, we simply need to split the routes and the controller functions into their own files.<br/>
 This is going to come in handy later when we then build the models for these functions<br/>
+### Put DB calls into models
+Compleated with custom table names<br/>

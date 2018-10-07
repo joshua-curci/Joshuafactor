@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use DB;
+use App\Users;
+use App\Pets;
+use App\Petfood;
 
 class UserController extends Controller
 {
@@ -17,7 +20,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = DB::table('users')->get();
+        $users = Users::get();
         foreach ($users as $user) {
             $user->display_name = $user->first_name . ' ' . $user->middle_name . ' ' . $user->last_name;
             unset($user->password);
@@ -28,7 +31,7 @@ class UserController extends Controller
     public function selecteduser($id)
     {
         $user = null;
-        $users = DB::table('users')->where('id', $id)->get();
+        $users = Users::where('id', $id)->get();
         if (count($users) > 0) {
             $user = $users[0];
         }
@@ -40,16 +43,16 @@ class UserController extends Controller
     {
         $user = null;
         $pets = [];
-        $users = DB::table('users')->where('id', $id)->get();
+        $users = Users::where('id', $id)->get();
         if (count($users) > 0) {
             $user = $users[0];
         }
      
         if ($user != null) {
-            $pets = DB::table('pets')->where('user_id', $user->id)->get();
+            $pets = Pets::where('user_id', $user->id)->get();
             if (count($pets) > 0) {
                 foreach ($pets as $pet) {
-                    $pet->favourite_foods = DB::table('pet_foods')->where('pet_id', $pet->id)->get();
+                    $pet->favourite_foods = Petfood::where('pet_id', $pet->id)->get();
                 }
             }
         }
@@ -87,7 +90,7 @@ class UserController extends Controller
             'disabled' => false,
         ]);
      
-        $users = DB::table('users')->where('email', $email)->get();
+        $users = Users::where('email', $email)->get();
      
         if (count($users) > 0) {
             $user = $users[0];
