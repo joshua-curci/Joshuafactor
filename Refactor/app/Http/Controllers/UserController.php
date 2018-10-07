@@ -82,12 +82,12 @@ class UserController extends Controller
         ]);
 
         $insertUser = new User;
-        $insertUser->first_name = $request->first_name,
-        $insertUser->middle_name = $request->middle_name,
-        $insertUser->last_name = $request->last_name,
-        $insertUser->email = $request->email,
-        $insertUser->contact_number = $request->contact_number,
-        $insertUser->disabled => false,
+        $insertUser->first_name = $request->first_name;
+        $insertUser->middle_name = $request->middle_name;
+        $insertUser->last_name = $request->last_name;
+        $insertUser->email = $request->email;
+        $insertUser->contact_number = $request->contact_number;
+        $insertUser->disabled = false;
         $insertUser->save();
      
         $users = Users::where('email', $email)->get();
