@@ -60,7 +60,7 @@ class UserController extends Controller
         return $pets;    
     }
 
-    public function userspost($id)
+    public function userspost(Request $request)
     {
         if ($request->has('password')) {
             unset($request['password']);
@@ -80,15 +80,15 @@ class UserController extends Controller
             'last_name' => 'required|max:64',
             'email' => 'required|unique:users|max:256',
         ]);
-     
-        DB::table('users')->insert([
-            'first_name' => $request->first_name,
-            'middle_name' => $request->middle_name,
-            'last_name' => $request->last_name,
-            'email' => $request->email,
-            'contact_number' => $request->contact_number,
-            'disabled' => false,
-        ]);
+
+        $insertUser = new User;
+        $insertUser->first_name = $request->first_name,
+        $insertUser->middle_name = $request->middle_name,
+        $insertUser->last_name = $request->last_name,
+        $insertUser->email = $request->email,
+        $insertUser->contact_number = $request->contact_number,
+        $insertUser->disabled => false,
+        $insertUser->save();
      
         $users = Users::where('email', $email)->get();
      

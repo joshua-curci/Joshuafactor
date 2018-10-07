@@ -10,7 +10,6 @@ ToDo list should be as follows:<br/>
 - [x] Split routes from functions in their own controllers
 - [x] Put DB calls into models
 - [ ] Optimise controller functions (5 in total)
-- [ ] Optimise form validations
 - [ ] Test incomplete foreach returns and function errors
 <br/>
 <br/>
@@ -19,3 +18,6 @@ At a base level, we simply need to split the routes and the controller functions
 This is going to come in handy later when we then build the models for these functions<br/>
 ### Put DB calls into models
 Compleated with custom table names<br/>
+### Optimise controller functions (5 in total)
+Being done in parts<br/>
+Firstly, optimising and updating the insert statement in the UserController<br/>
