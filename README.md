@@ -23,3 +23,4 @@ Being done in parts<br/>
 1. Optimising and updating the insert statement in the UserController<br/>
 2. In the 'selecteduser' function, you are getting a unique user, you can optimise this code by simply getting the first returned result of the unique ID<br/>
 3. Similar thing can be optimised for the 'userpets' function<br/>
+4. Updated the pet food query into the one query in 'userpets' data return will still be the same but cleaner and shorter function<br/>

@@ -8,7 +8,6 @@ use Illuminate\Http\Response;
 use DB;
 use App\Users;
 use App\Pets;
-use App\Petfood;
 
 class UserController extends Controller
 {
@@ -40,12 +39,7 @@ class UserController extends Controller
         $user = Users::where('id', $id)->first();
      
         if ($user != null) {
-            $pets = Pets::where('user_id', $user->id)->get();
-            if (count($pets) > 0) {
-                foreach ($pets as $pet) {
-                    $pet->favourite_foods = Petfood::where('pet_id', $pet->id)->get();
-                }
-            }
+            $pets = Pets::where('user_id', $user->id)->with('favourite_foods')->get();
         }
      
         return $pets;    
