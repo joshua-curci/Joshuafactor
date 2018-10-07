@@ -30,12 +30,7 @@ class UserController extends Controller
 
     public function selecteduser($id)
     {
-        $user = null;
-        $users = Users::where('id', $id)->get();
-        if (count($users) > 0) {
-            $user = $users[0];
-        }
-    
+        $user = Users::where('id', $id)->first();
         return $user;
     }
 

@@ -20,4 +20,5 @@ This is going to come in handy later when we then build the models for these fun
 Compleated with custom table names<br/>
 ### Optimise controller functions (5 in total)
 Being done in parts<br/>
-Firstly, optimising and updating the insert statement in the UserController<br/>
+1. Optimising and updating the insert statement in the UserController<br/>
+2. In the 'selecteduser' function, you are getting a unique user, you can optimise this code by simply getting the first returned result of the unique ID<br/>
