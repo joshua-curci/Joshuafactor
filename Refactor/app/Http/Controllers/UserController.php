@@ -36,12 +36,8 @@ class UserController extends Controller
 
     public function userpets($id)
     {
-        $user = null;
         $pets = [];
-        $users = Users::where('id', $id)->get();
-        if (count($users) > 0) {
-            $user = $users[0];
-        }
+        $user = Users::where('id', $id)->first();
      
         if ($user != null) {
             $pets = Pets::where('user_id', $user->id)->get();

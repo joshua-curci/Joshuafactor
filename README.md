@@ -22,3 +22,4 @@ Compleated with custom table names<br/>
 Being done in parts<br/>
 1. Optimising and updating the insert statement in the UserController<br/>
 2. In the 'selecteduser' function, you are getting a unique user, you can optimise this code by simply getting the first returned result of the unique ID<br/>
+3. Similar thing can be optimised for the 'userpets' function<br/>
